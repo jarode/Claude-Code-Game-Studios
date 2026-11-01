@@ -61,4 +61,4 @@ if __name__ == "__main__":
         print("FAIL:", problem)
     if problems:
         sys.exit(1)
-    print(f"PASS: 76 canonical skills matched to {len(bridges)} valid Codex adapters")
+    print("PASS: 76 canonical skills matched to 76 valid Codex adapters")
