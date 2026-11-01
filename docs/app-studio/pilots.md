@@ -1,5 +1,7 @@
 # App Studio pilots
 
+**[Pilot execution report — 2026-11-01](pilot-results-2026-11-01.md)**: verified installations, test outputs, read-only Codex audits and the next tasks.
+
 ## Pilot A — Flagi i państwa (Godot quiz)
 **Repository:** `jarode/flagi-i-panstwa`. Existing tests: `tests/test_dataset.py`, `tests/FlagQuizSmoke.gd`, and on feature PR #1 `tests/QuizAnswerRegression.gd`. User verified manual play in related Godot projects, but device TTS still needs separate testing.
 
