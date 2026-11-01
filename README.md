@@ -3,14 +3,14 @@
   <p align="center">
     Turn a single Claude Code session into a full game development studio.
     <br />
-    49 agents. 76 skills. One coordinated AI team.
+    56 role profiles. 84 skills. One coordinated AI team.
   </p>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
-  <a href=".claude/agents"><img src="https://img.shields.io/badge/agents-49-blueviolet" alt="49 Agents"></a>
-  <a href=".claude/skills"><img src="https://img.shields.io/badge/skills-76-green" alt="76 Skills"></a>
+  <a href=".claude/agents"><img src="https://img.shields.io/badge/agents-56-blueviolet" alt="56 Agents"></a>
+  <a href=".claude/skills"><img src="https://img.shields.io/badge/skills-84-green" alt="84 Skills"></a>
   <a href=".claude/hooks"><img src="https://img.shields.io/badge/hooks-15-orange" alt="15 Hooks"></a>
   <a href=".claude/rules"><img src="https://img.shields.io/badge/rules-14-red" alt="14 Rules"></a>
   <a href="https://code.claude.com/docs"><img src="https://img.shields.io/badge/built%20for-Claude%20Code-f5f5f5?logo=anthropic" alt="Built for Claude Code"></a>
@@ -19,6 +19,21 @@
 </p>
 
 ---
+
+## App Studio — web, SaaS, mobile and integrations
+
+This fork includes **AI Development Studio** on top of the original game framework: 7 app-specific roles, 8 development and QA workflows, 6 technology profiles and a safe installer for existing repositories. Godot, Claude Code and original hooks remain supported. The new Codex skill adapters are under `.agents/skills/studio-*`.
+
+**[Start with App Studio](docs/app-studio/README.md)** · [Technology profiles](docs/app-studio/profiles/) · [Live pilot checklist](docs/app-studio/pilots.md)
+
+Quick install into an existing app repo (preview first):
+
+```bash
+python scripts/install_app_studio.py --target /path/to/app
+python scripts/install_app_studio.py --target /path/to/app --apply
+```
+
+Changes are additive; they do not deploy applications, edit existing `AGENTS.md` or automatically run independent agents.
 
 ## Why This Exists
 
@@ -54,8 +69,8 @@ The result: you still make every decision, but now you have a team that asks the
 
 | Category | Count | Description |
 |----------|-------|-------------|
-| **Agents** | 49 | Specialized subagents across design, programming, art, audio, narrative, QA, and production |
-| **Skills** | 74 | Slash commands for every workflow phase (`/start`, `/design-system`, `/create-epics`, `/create-stories`, `/dev-story`, `/story-done`, etc.) |
+| **Agents** | 56 | Specialized subagents across design, programming, art, audio, narrative, QA, and production |
+| **Skills** | 84 | Slash commands for every workflow phase (`/start`, `/design-system`, `/create-epics`, `/create-stories`, `/dev-story`, `/story-done`, etc.) |
 | **Hooks** | 15 | Automated validation on commits, pushes, asset changes, design-doc reads, writes and registries, session lifecycle, agent audit trail, and gap detection |
 | **Rules** | 14 | Path-scoped coding standards enforced when editing gameplay, engine, AI, UI, network code, scene and asset files, and more |
 | **Templates** | 62 | Document templates for GDDs, UX specs, ADRs, sprint plans, HUD design, accessibility, and more |

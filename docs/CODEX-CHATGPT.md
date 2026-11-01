@@ -8,7 +8,7 @@ This fork keeps Claude Code intact while providing a Codex-compatible entry poin
 |---|---|---|---|
 | Project instructions | `CLAUDE.md` | `AGENTS.md` | Read supplied project files or connected GitHub |
 | Studio workflows | `.claude/skills/*` | `.agents/skills/studio-*` bridges | Ask to execute a named workflow using available tools |
-| 49 studio roles | Claude subagents | Reuse role profiles; delegate only when supported | Simulate role review sequentially |
+| 56 studio role profiles | Claude subagents | Reuse role profiles; delegate only when supported | Simulate role review sequentially |
 | 15 lifecycle hooks | Native via `.claude/settings.json` | **Not installed by this adapter** | Not supported natively |
 | File-based config and docs | Supported | Supported | Supported when files accessible |
 | Build, tests, QA screenshots | Local tools | Local tools when available | Only with access to execution/browser tools |
@@ -42,3 +42,9 @@ Check that all bridges point to an existing canonical skill, inspect the diff to
 ## Compatibility development
 
 New workflows should be implemented once under `.claude/skills/` and exposed via a small adapter under `.agents/skills/`. Avoid copying long workflow bodies. Document any Claude-only syntax that needs a Codex substitute.
+## Application Studio extension
+- Eight new canonical workflows are in `.claude/skills/{app-audit,feature-development,api-integration,database-migration,e2e-test,ui-regression,deployment-check,production-incident}/SKILL.md` and mirrored by tiny Codex bridges in `.agents/skills/studio-*/`.
+- Seven application role profiles in `.claude/agents/` cover product, full-stack, database, mobile, integration, E2E QA and privacy.
+- See `docs/app-studio/README.md` for technology profiles and external app installation.
+- `scripts/install_app_studio.py --target /path/to/app` is a **dry-run** by default; `--apply` installs standalone Codex skills and role/docs files, does not alter target code or existing AGENTS/Claude settings, and rejects file conflicts.
+- For third-party repositories, skill presence is not execution. Confirm environment, product context, test evidence and explicit human approval for consequential changes.
