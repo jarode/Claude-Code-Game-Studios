@@ -2,6 +2,9 @@
 
 Non-destructive extension of Claude Code Game Studios for existing web, mobile, SaaS and integration products.
 
+## Editor integration
+Cursor reads the same project skills under `.agents/skills/`. See [Cursor setup and acceptance checklist](../CURSOR.md). No duplicated skill set is required.
+
 ## What exists
 - **Game Studio remains intact:** 49 legacy game roles, 76 legacy/canonical workflows (including the 2 educational quiz additions).
 - **App Studio adds:** 7 application-specific roles, 8 new canonical workflows, 8 Codex bridges and 6 technology profiles. Total after this extension: **56 role files and 84 canonical skills**.
@@ -35,7 +38,7 @@ Apply the explicit, additive installation:
 ```sh
 python scripts/install_app_studio.py --target /path/to/my-app --apply
 ```
-It copies **self-contained** Codex skills, 7 app roles, 6 technology profiles and this guide. It does **not** touch the target's `AGENTS.md`, `project.yaml`, existing skills or `.claude/settings.json`, and refuses overwrites. Run in a throwaway branch/worktree and review `git diff` before committing. For Claude skills, use the studio repository directly or copy the canonical workflows deliberately; installation does not promise automatic Claude hook behavior.
+It copies **self-contained** Codex/Cursor skills, app roles, technology profiles and a native Cursor project rule. It does **not** touch the target's `AGENTS.md`, `project.yaml`, existing skills, existing Cursor rules or `.claude/settings.json`, and refuses overwrites. Run in a throwaway branch/worktree and review `git diff` before committing. For Claude skills, use the studio repository directly or copy the canonical workflows deliberately; installation does not promise automatic Claude hook behavior.
 
 In Codex from the target application root:
 > Use `$studio-app-audit`, inspect this existing repository, run read-only tests, and produce a prioritized first story with evidence.

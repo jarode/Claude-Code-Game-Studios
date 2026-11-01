@@ -24,7 +24,7 @@
 
 This fork includes **AI Development Studio** on top of the original game framework: 7 app-specific roles, 8 development and QA workflows, 6 technology profiles and a safe installer for existing repositories. Godot, Claude Code and original hooks remain supported. The new Codex skill adapters are under `.agents/skills/studio-*`.
 
-**[Start with App Studio](docs/app-studio/README.md)** · [Technology profiles](docs/app-studio/profiles/) · [Live pilot checklist](docs/app-studio/pilots.md)
+**[Start with App Studio](docs/app-studio/README.md)** · [Cursor integration](docs/CURSOR.md) · [Technology profiles](docs/app-studio/profiles/) · [Live pilot checklist](docs/app-studio/pilots.md)
 
 Quick install into an existing app repo (preview first):
 

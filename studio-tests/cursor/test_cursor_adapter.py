@@ -23,7 +23,7 @@ class CursorIntegration(unittest.TestCase):
 
     def test_cursor_doc_and_installer_install_rule(self):
         doc = (ROOT / "docs/CURSOR.md").read_text(encoding="utf-8")
-        self.assertIn("NOT yet", doc.upper().replace("NOT YET", "NOT yet") if False else doc + " NOT yet")
+        self.assertIn("not yet a verified Cursor test", doc)
         source = (ROOT / "scripts/install_app_studio.py").read_text(encoding="utf-8")
         self.assertIn('Cursor', source)
         self.assertIn('ai-development-studio.mdc', source)
