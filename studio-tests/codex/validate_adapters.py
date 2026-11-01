@@ -21,8 +21,8 @@ def check() -> list[str]:
 
     if not canonical:
         errors.append("No canonical skills found")
-    if len(canonical) != 76:
-        errors.append(f"Expected 76 canonical skills, got {len(canonical)}")
+    if len(canonical) != 84:
+        errors.append(f"Expected 84 canonical skills, got {len(canonical)}")
     missing = sorted(set(canonical) - set(bridges))
     extra = sorted(set(bridges) - set(canonical))
     if missing:
@@ -49,9 +49,18 @@ def check() -> list[str]:
         if re.search(r"(^|\n)\s*(?:allowed-tools|model):", front.group("content")):
             errors.append(f"{path.relative_to(ROOT)}: copied Claude-only frontmatter")
 
-    for required in ["AGENTS.md", "docs/CODEX-CHATGPT.md", ".agents/skills/README.md"]:
+    for required in ["AGENTS.md", "docs/CODEX-CHATGPT.md", ".agents/skills/README.md", "docs/app-studio/README.md", "scripts/install_app_studio.py"]:
+
         if not (ROOT / required).is_file():
             errors.append(f"Missing {required}")
+    required_roles = ("product-analyst", "full-stack-developer", "database-architect",
+                      "mobile-developer", "integration-engineer", "e2e-automation-engineer",
+                      "privacy-compliance-reviewer")
+    for name in required_roles:
+        if not (ROOT / ".claude" / "agents" / f"{name}.md").is_file():
+            errors.append(f"Missing app role {name}")
+    if len(list((ROOT / ".claude" / "agents").glob("*.md"))) != 56:
+        errors.append("Expected 56 role files")
     return errors
 
 
@@ -61,4 +70,4 @@ if __name__ == "__main__":
         print("FAIL:", problem)
     if problems:
         sys.exit(1)
-    print("PASS: 76 canonical skills matched to 76 valid Codex adapters")
+    print("PASS: 84 canonical skills matched to 84 valid Codex adapters")

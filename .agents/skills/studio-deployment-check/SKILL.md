@@ -1,0 +1,15 @@
+---
+name: studio-deployment-check
+description: "Assess release readiness, rollback and monitoring without deploying."
+---
+# App Studio: deployment-check
+
+Canonical workflow: [`.claude/skills/deployment-check/SKILL.md`](../../../.claude/skills/deployment-check/SKILL.md).
+
+1. Read `AGENTS.md` and the canonical `.claude/skills/deployment-check/SKILL.md` completely. Apply the matching technology profile in `docs/app-studio/profiles/`, plus relevant role instructions in `.claude/agents/`.
+2. Locate the **actual app repository**; validate its Git status, scripts, environment and authorization. Do not assume the Game Studios template is the app.
+3. Execute each workflow stage using only available tools, recording real test outputs and evidence. Translate Claude-only tools and hooks; they are not automatically available in Codex.
+4. Protect existing product behavior and user data. Avoid unwanted writes, deployments, force pushes or external messages.
+5. Summarize PASS / FAIL / NOT RUN, findings, changes, test commands, and remaining manual checks.
+
+For an app installed separately from this framework, use `scripts/install_app_studio.py` to create self-contained Codex skills without broken cross-repository links.

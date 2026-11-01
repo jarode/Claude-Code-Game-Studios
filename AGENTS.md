@@ -3,12 +3,12 @@
 This repository is a cross-tool game-development studio. **Do not change or delete the Claude Code integration.** Claude-specific settings and hooks under `.claude/` are NOT automatically enforced by Codex or ChatGPT.
 
 ## Source of truth
-- Read `project.yaml` (and optional gitignored `project.local.yaml`) to determine engine, rigor, and project state. Do not introduce competing configuration files.
+- In **this studio template**, read `project.yaml` (and optional gitignored `project.local.yaml`) to determine engine, rigor, and project state. In an **external application**, do NOT add project.yaml or require game-specific conventions; follow its existing configuration.
 - Read `production/session-state/active.md` if present before resuming a task.
 - The role profiles live in `.claude/agents/*.md`. Their responsibilities and domain guidance apply to Codex, but Claude-only frontmatter (model, allowed-tools) and subagent execution syntax do not.
 - The canonical workflow implementations live in `.claude/skills/<workflow>/SKILL.md`; Codex skill bridges are in `.agents/skills/`.
 - Read the relevant documents under `.claude/docs/` and the engine version in `docs/engine-reference/<engine>/VERSION.md` when applicable.
-- Never assume Claude `@` imports or `!\` command interpolation are executed by Codex; resolve relevant paths and commands explicitly.
+- Never assume Claude `@` imports or `!command` shell interpolation are executed by Codex; resolve relevant paths and commands explicitly.
 
 ## How to work
 1. Identify the user's goal and actual current project stage. Prefer short, working increments over unnecessary documentation.
@@ -34,3 +34,10 @@ This repository is a cross-tool game-development studio. **Do not change or dele
 For plain ChatGPT (without a Codex project workspace), the same markdown roles/workflows can be read as project documents, but local commands, file edits, tests and hooks require separately available tools.
 ## Educational quiz workflows
 - For a Godot or other quiz application, prefer `$studio-quiz-development` and `$studio-quiz-qa`. These preserve the existing app engine and explicitly test scoring, data, audio and progress. See `.claude/skills/quiz-development/SKILL.md` and `.claude/skills/quiz-qa/SKILL.md`.
+
+## Application development workflows
+- For web, mobile, SaaS or integration work, start with `docs/app-studio/README.md` and choose the profile(s) matching the **target application**.
+- Use `$studio-app-audit`, `$studio-feature-development`, `$studio-api-integration`, `$studio-database-migration`, `$studio-e2e-test`, `$studio-ui-regression`, `$studio-deployment-check` and `$studio-production-incident`.
+- App workflows have their canonical specs in `.claude/skills/<workflow>/SKILL.md` and 7 dedicated role profiles under `.claude/agents/`.
+- For separate repositories, preview `python scripts/install_app_studio.py --target /path/to/app` and apply only when wanted. Installed Codex skills are standalone and the target's existing settings remain untouched.
+- Production writes, deployment, secrets, payments, email, notifications and live HR/customer records require separate explicit authorization. A passing unit test or CI result is not proof of end-to-end user acceptance.
