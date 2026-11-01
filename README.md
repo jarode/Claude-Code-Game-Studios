@@ -3,14 +3,14 @@
   <p align="center">
     Turn a single Claude Code session into a full game development studio.
     <br />
-    49 agents. 74 skills. One coordinated AI team.
+    49 agents. 76 skills. One coordinated AI team.
   </p>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
   <a href=".claude/agents"><img src="https://img.shields.io/badge/agents-49-blueviolet" alt="49 Agents"></a>
-  <a href=".claude/skills"><img src="https://img.shields.io/badge/skills-74-green" alt="74 Skills"></a>
+  <a href=".claude/skills"><img src="https://img.shields.io/badge/skills-76-green" alt="76 Skills"></a>
   <a href=".claude/hooks"><img src="https://img.shields.io/badge/hooks-15-orange" alt="15 Hooks"></a>
   <a href=".claude/rules"><img src="https://img.shields.io/badge/rules-14-red" alt="14 Rules"></a>
   <a href="https://code.claude.com/docs"><img src="https://img.shields.io/badge/built%20for-Claude%20Code-f5f5f5?logo=anthropic" alt="Built for Claude Code"></a>
@@ -101,12 +101,14 @@ The template includes agent sets for all three major engines. Use the set that m
 
 ## Slash Commands
 
-Type `/` in Claude Code to access all 74 skills:
+Type `/` in Claude Code to access all 76 skills:
 
 **Onboarding & Navigation**
 `/start` `/help` `/project-stage-detect` `/setup-engine` `/adopt` `/settings`
 
 **Game Design**
+`/quiz-development` `/quiz-qa` (educational quiz workflows — Codex adapters `studio-quiz-development`, `studio-quiz-qa`)
+
 `/brainstorm` `/map-systems` `/design-system` `/quick-design` `/review-all-gdds` `/propagate-design-change`
 
 **Art & Assets**
@@ -264,7 +266,7 @@ CLAUDE.md                           # Master configuration
 .claude/
   settings.json                     # Hooks, permissions, safety rules
   agents/                           # 49 agent definitions (markdown + YAML frontmatter)
-  skills/                           # 74 slash commands (subdirectory per skill)
+  skills/                           # 76 slash commands (subdirectory per skill)
   hooks/                            # 18 scripts (bash) — 15 event hooks, two helpers they
                                     #   source (yaml-helper.sh, update-check.sh), and one
                                     #   opt-in diagnostic you wire yourself
@@ -290,7 +292,7 @@ studio-tests/                       # QA for the skills and agents themselves �
 
 CCGS is a template you are meant to edit. `studio-tests/` is how
 you check that an edited or newly written skill still holds up — a catalog of all
-74 skills and 49 agents, per-category quality rubrics, behavioral specs, and
+76 skills and 49 agents, per-category quality rubrics, behavioral specs, and
 templates for writing specs of your own.
 
 ```

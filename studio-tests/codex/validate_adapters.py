@@ -21,8 +21,8 @@ def check() -> list[str]:
 
     if not canonical:
         errors.append("No canonical skills found")
-    if len(canonical) != 74:
-        errors.append(f"Expected 74 canonical skills, got {len(canonical)}")
+    if len(canonical) != 76:
+        errors.append(f"Expected 76 canonical skills, got {len(canonical)}")
     missing = sorted(set(canonical) - set(bridges))
     extra = sorted(set(bridges) - set(canonical))
     if missing:
@@ -61,4 +61,4 @@ if __name__ == "__main__":
         print("FAIL:", problem)
     if problems:
         sys.exit(1)
-    print("PASS: 74 canonical skills matched to 74 valid Codex adapters")
+    print("PASS: 76 canonical skills matched to 74 valid Codex adapters")

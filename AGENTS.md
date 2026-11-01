@@ -32,3 +32,5 @@ This repository is a cross-tool game-development studio. **Do not change or dele
 - Full workflow catalog: see `docs/CODEX-CHATGPT.md` and `.agents/skills/`.
 
 For plain ChatGPT (without a Codex project workspace), the same markdown roles/workflows can be read as project documents, but local commands, file edits, tests and hooks require separately available tools.
+## Educational quiz workflows
+- For a Godot or other quiz application, prefer `$studio-quiz-development` and `$studio-quiz-qa`. These preserve the existing app engine and explicitly test scoring, data, audio and progress. See `.claude/skills/quiz-development/SKILL.md` and `.claude/skills/quiz-qa/SKILL.md`.
