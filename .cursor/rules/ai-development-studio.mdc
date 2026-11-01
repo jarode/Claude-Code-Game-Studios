@@ -1,0 +1,14 @@
+---
+description: Project-wide, non-destructive AI Development Studio instructions for Cursor Agent.
+alwaysApply: true
+---
+# AI Development Studio — Cursor
+
+- Read root `AGENTS.md` as the shared source of truth. This Cursor rule adds no new source of architecture truth.
+- For game projects, inspect the real engine and project files. For existing non-game apps, inspect the actual application repository and the matching profile in `docs/app-studio/profiles/`. Never insert the studio's `project.yaml` into an existing app.
+- Use project skills from `.agents/skills/studio-*/SKILL.md`. Follow their canonical `.claude/skills/<name>/SKILL.md` references when working inside this studio repository. Cursor may also discover `.claude/skills/`; choose one workflow intentionally rather than running duplicate variants.
+- For app development choose `studio-app-audit`, `studio-feature-development`, `studio-api-integration`, `studio-database-migration`, `studio-e2e-test`, `studio-ui-regression`, `studio-deployment-check` or `studio-production-incident`.
+- Inspect Git status and run existing tests before code edits. Implement the smallest authorized change in a separate branch/worktree; preserve existing design, data, behavior, secrets and configured workflow.
+- Record real command, environment, exit status and evidence for each check; distinguish PASS/FAIL/NOT RUN. Headless launch is not proof of correct UX, TTS, physical Web Push, or authenticated E2E.
+- Do not assume Claude hooks run in Cursor. Do not claim that skill instructions launched separate subagents unless it really happened.
+- Never deploy, alter a production DB, send real notifications/emails, incur charges, expose secrets, or force-push without explicit authorization. Commit/PR work does not grant production authorization.

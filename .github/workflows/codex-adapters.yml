@@ -5,6 +5,9 @@ on:
     paths:
       - 'AGENTS.md'
       - '.agents/**'
+      - '.cursor/**'
+      - 'docs/CURSOR.md'
+      - 'studio-tests/cursor/**'
       - '.claude/skills/**'
       - '.claude/agents/**'
       - 'docs/app-studio/**'
@@ -39,3 +42,5 @@ jobs:
         run: python studio-tests/codex/validate_adapters.py
       - name: Test standalone App Studio installer (dry-run, apply, conflict handling)
         run: python -m unittest discover -s studio-tests/app-studio -p 'test_*.py' -v
+      - name: Validate native Cursor bridge and shared skill reuse
+        run: python -m unittest discover -s studio-tests/cursor -p 'test_*.py' -v

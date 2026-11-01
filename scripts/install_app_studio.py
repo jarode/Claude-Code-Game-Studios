@@ -57,9 +57,12 @@ def build_files() -> dict[Path, str]:
     for name in APP_ROLES + SUPPORT_ROLES:
         src = SOURCE_ROOT / ".claude" / "agents" / f"{name}.md"
         output[Path(".app-studio/roles") / f"{name}.md"] = src.read_text(encoding="utf-8")
+    # Cursor consumes the existing .agents/skills catalog and one scoped project rule.
+    output[Path(".cursor/rules/ai-development-studio.mdc")] = (SOURCE_ROOT / ".cursor/rules/ai-development-studio.mdc").read_text(encoding="utf-8")
     docs = SOURCE_ROOT / "docs" / "app-studio"
     for file in docs.rglob("*.md"):
         output[file.relative_to(SOURCE_ROOT)] = file.read_text(encoding="utf-8")
+    output[Path("docs/CURSOR.md")] = (SOURCE_ROOT / "docs/CURSOR.md").read_text(encoding="utf-8")
     return output
 
 
